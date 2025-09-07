@@ -1,6 +1,3 @@
-from typing_extensions import assert_never
-from statistics import mean
-
 studentReports={
     '19001':{
         'name':'Aliyyah',
@@ -227,4 +224,5 @@ def main():
             main()
 
 if __name__ == "__main__":
+
     main()
