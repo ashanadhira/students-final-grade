@@ -52,10 +52,8 @@ def seeData():
     checkData=int(input("\nWhich data would you like to see? "))
     if checkData==1:
         seeAllData()
-        subSee()
     elif checkData==2:
         seeOneData()
-        subSee()
     elif checkData==3:
         return
     else:
@@ -63,17 +61,22 @@ def seeData():
 
 def seeAllData():
     print(f"\nSTUDENTS:")
-    for nis, data in studentReports.items():
+    for nis in studentReports:
+        data=studentReports[nis]
         print(f"\nNIS: {nis}\nNAME: {data['name']}\nHomework Grade: {data['homework']}\nMid Test: {data['midTest']}\nFinal Test: {data['finTest']}\nAverage: {averageStudent(data['homework'],data['midTest'],data['finTest'])}")
+    subSee()
 
 def seeOneData():
     chooseStudent=input("\nEnter student's NIS you'd like to see: ")
-    for nis, data in studentReports.items():
+    for nis in studentReports:
+        data=studentReports[nis]
         if nis==chooseStudent:
             print(f"\nNIS: {nis}\nNAME: {data['name']}\nHomework Grade: {data['homework']}\nMid Test: {data['midTest']}\nFinal Test: {data['finTest']}\nAverage: {averageStudent(data['homework'],data['midTest'],data['finTest'])}")
+            subSee()
             break
     else:
         print("\nStudent's data not found")
+        subSee()
 
 def subAdd():
     print(f"\nADD STUDENT'S DATA\n1. Add new data\n2. Exit to main menu")
@@ -110,11 +113,12 @@ def subErase():
     if eraseMenu==1:
         eraseData()
     elif eraseMenu==2:
-        displayMenu()
+        return
 
 def eraseData():
     studentErase=input("\nEnter student's NIS you'd like to erase: ")
-    for nis, data in studentReports.items():
+    for nis in studentReports:
+        data=studentReports[nis]
         if nis==studentErase:
             print(f"\nNIS: {nis}\nNAME: {data['name']}\nHomework Grade: {data['homework']}\nMid Test: {data['midTest']}\nFinal Test: {data['finTest']}\nAverage: {averageStudent(data['homework'],data['midTest'],data['finTest'])}\n")
             eraseConfirm=input("Are you sure you want to delete this data? (Y/N): ")
@@ -150,7 +154,8 @@ def subChange():
 
 def changeName():
     editName=input(f"Enter student's NIS you'd like to edit: ")
-    for nis, data in studentReports.items():
+    for nis in studentReports:
+        data=studentReports[nis]
         if nis==editName:
             print(f"\nPrevious Name: {data['name']}")
             newName=input(f"Enter updated student's name: ")
@@ -164,7 +169,8 @@ def changeName():
 
 def changeHomework():
     editHomework=input(f"Enter student's NIS you'd like to edit: ")
-    for nis, data in studentReports.items():
+    for nis in studentReports:
+        data=studentReports[nis]
         if nis==editHomework:
             print(f"\nPrevious score: {data['homework']}")
             newHomeGrade=int(input(f"Enter updated student's grade: "))
@@ -178,7 +184,8 @@ def changeHomework():
 
 def changeMidGrade():
     editMidGrade=input(f"\nEnter student's NIS you'd like to edit: ")
-    for nis, data in studentReports.items():
+    for nis in studentReports:
+        data=studentReports[nis]
         if nis==editMidGrade:
             print(f"\nPrevious score: {data['midTest']}")
             newMidGrade=int(input(f"Enter updated student's grade: "))
@@ -192,7 +199,8 @@ def changeMidGrade():
 
 def changeFinGrade():
     editFinGrade=input(f"Enter student's NIS you'd like to edit: ")
-    for nis, data in studentReports.items():
+    for nis in studentReports:
+        data=studentReports[nis]
         if nis==editFinGrade:
             print(f"\nPrevious score: {data['finTest']}")
             newFinGrade=int(input(f"Enter updated student's grade: "))
