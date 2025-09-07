@@ -57,7 +57,7 @@ def seeData():
         seeOneData()
         subSee()
     elif checkData==3:
-        displayMenu()
+        return
     else:
         print("\nChoose a valid number between 1-3")
 
@@ -81,7 +81,7 @@ def subAdd():
     if addMenu==1:
         addData()
     elif addMenu==2:
-        displayMenu()
+        return
 
 def addData():
     nisAdd=input("\nEnter NIS: ")
@@ -143,7 +143,7 @@ def subChange():
     elif dataChange==4:
         changeFinGrade()
     elif dataChange==5:
-        displayMenu()
+        return
     else:
         print(f"Choose only number 1-4")
         subChange()
@@ -224,5 +224,4 @@ def main():
             main()
 
 if __name__ == "__main__":
-
     main()
