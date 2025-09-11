@@ -159,7 +159,7 @@ def changeName():
         if nis==editName:
             print(f"\nPrevious Name: {data['name']}")
             newName=input(f"Enter updated student's name: ")
-            eraseConfirm=input("Are you sure you want to delete this data? (Y/N): ")
+            eraseConfirm=input("Are you sure you want to update this data? (Y/N): ")
             if eraseConfirm=='Y':
                 data['name']=newName
                 print(f"\nNIS: {nis}\nNAME: {data['name']}\nHomework Grade: {data['homework']}\nMid Test: {data['midTest']}\nFinal Test: {data['finTest']}\nAverage: {averageStudent(data['homework'],data['midTest'],data['finTest'])}")
@@ -180,7 +180,7 @@ def changeHomework():
         if nis==editHomework:
             print(f"\nPrevious score: {data['homework']}")
             newHomeGrade=int(input(f"Enter updated student's grade: "))
-            eraseConfirm=input("Are you sure you want to delete this data? (Y/N): ")
+            eraseConfirm=input("Are you sure you want to update this data? (Y/N): ")
             if eraseConfirm=='Y':
                 data['homework']=newHomeGrade
                 print(f"\nNIS: {nis}\nNAME: {data['name']}\nHomework Grade: {data['homework']}\nMid Test: {data['midTest']}\nFinal Test: {data['finTest']}\nAverage: {averageStudent(data['homework'],data['midTest'],data['finTest'])}")
@@ -201,7 +201,7 @@ def changeMidGrade():
         if nis==editMidGrade:
             print(f"\nPrevious score: {data['midTest']}")
             newMidGrade=int(input(f"Enter updated student's grade: "))
-            eraseConfirm=input("Are you sure you want to delete this data? (Y/N): ")
+            eraseConfirm=input("Are you sure you want to update this data? (Y/N): ")
             if eraseConfirm=='Y':
                 data['midTest']=newMidGrade
                 print(f"\nNIS: {nis}\nNAME: {data['name']}\nHomework Grade: {data['homework']}\nMid Test: {data['midTest']}\nFinal Test: {data['finTest']}\nAverage: {averageStudent(data['homework'],data['midTest'],data['finTest'])}")
@@ -222,7 +222,7 @@ def changeFinGrade():
         if nis==editFinGrade:
             print(f"\nPrevious score: {data['finTest']}")
             newFinGrade=int(input(f"Enter updated student's grade: "))
-            eraseConfirm=input("Are you sure you want to delete this data? (Y/N): ")
+            eraseConfirm=input("Are you sure you want to update this data? (Y/N): ")
             if eraseConfirm=='Y':
                 data['finTest']=newFinGrade
                 print(f"\nNIS: {nis}\nNAME: {data['name']}\nHomework Grade: {data['homework']}\nMid Test: {data['midTest']}\nFinal Test: {data['finTest']}\nAverage: {averageStudent(data['homework'],data['midTest'],data['finTest'])}")
@@ -257,4 +257,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
